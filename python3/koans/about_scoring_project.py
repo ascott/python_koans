@@ -33,8 +33,28 @@ from runner.koan import *
 # Your goal is to write the score method.
 
 def score(dice):
-    # You need to write this method
-    pass
+    score = 0
+
+    tallies = {}.fromkeys(set(dice), 0)
+    for die in dice:
+        tallies[die] += 1
+
+    if 1 in tallies and tallies[1] >= 3:
+        tallies[1] -= 3
+        score += 1000
+
+    for k in tallies:
+        if tallies[k] >= 3:
+            tallies[k] -= 3
+            score += k * 100
+
+    for k in tallies:
+        if k == 1:
+            score += 100 * tallies[k]
+        elif k== 5:
+            score += 50 * tallies[k]
+
+    return score
 
 
 class AboutScoringProject(Koan):
@@ -69,5 +89,5 @@ class AboutScoringProject(Koan):
         self.assertEqual(1150, score([1, 1, 1, 5, 1]))
 
     def test_ones_not_left_out(self):
-        self.assertEqual(300, score([1, 2, 2, 2]))
-        self.assertEqual(350, score([1, 5, 2, 2, 2]))
+        self.assertEqual(300, score([1,2,2,2]))
+        self.assertEqual(350, score([1,5,2,2,2]))
