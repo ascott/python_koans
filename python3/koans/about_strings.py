@@ -25,29 +25,31 @@ class AboutStrings(Koan):
         string = r"Konnichi wa, world!"
         self.assertEqual(__, isinstance(string, str))
 
-    def test_use_single_quotes_to_create_string_with_double_quotes(self):
-        string = 'He said, "Go Away."'
-        self.assertEqual(__, string)
-
-    def test_use_double_quotes_to_create_strings_with_single_quotes(self):
-        string = "Don't"
-        self.assertEqual(__, string)
-
     def test_use_backslash_for_escaping_quotes_in_strings(self):
         a = "He said, \"Don't\""
         b = 'He said, "Don\'t"'
         self.assertEqual(__, (a == b))
 
-    def test_use_backslash_at_the_end_of_a_line_to_continue_onto_the_next_line(self):
-        string = "It was the best of times,\n\
-It was the worst of times."
-        self.assertEqual(__, len(string))
+    def test_use_single_quotes_to_create_string_with_double_quotes(self):
+        string = 'He said, "Go Away."'
+        expected = __  # Use " only and escape the inner pair
+        self.assertEqual(expected, string)
+
+    def test_use_double_quotes_to_create_strings_with_single_quotes(self):
+        string = "Don't"
+        expected = __  # Use ' only and escapte the inner pair
+        self.assertEqual(expected, string)
 
     def test_triple_quoted_strings_can_span_lines(self):
         string = """
 Howdy,
 world!
 """
+        self.assertEqual(__, len(string))
+
+    def test_use_backslash_at_the_end_of_a_line_to_continue_onto_the_next_line(self):
+        string = "It was the best of times,\n\
+It was the worst of times."
         self.assertEqual(__, len(string))
 
     def test_triple_quoted_strings_need_less_escaping(self):
@@ -57,7 +59,8 @@ world!
 
     def test_escaping_quotes_at_the_end_of_triple_quoted_string(self):
         string = """Hello "world\""""
-        self.assertEqual(__, string)
+        expected = __  # Use a string inside single quotes
+        self.assertEqual(expected, string)
 
     def test_plus_concatenates_strings(self):
         string = "Hello, " + "world"
@@ -79,6 +82,7 @@ world!
         there = "world"
         hi += there
         self.assertEqual(__, hi)
+        self.assertEqual(__, there)
 
     def test_plus_equals_also_leaves_original_string_unmodified(self):
         original = "Hello, "
