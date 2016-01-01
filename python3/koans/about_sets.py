@@ -9,6 +9,7 @@ class AboutSets(Koan):
 
         there_can_only_be_only_one = set(highlanders)
 
+        self.assertEqual(__, len(there_can_only_be_only_one))
         self.assertEqual(__, there_can_only_be_only_one)
 
     def test_empty_sets_have_different_syntax_to_populated_sets(self):
