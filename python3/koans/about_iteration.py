@@ -115,11 +115,7 @@ class AboutIteration(Koan):
 
     # ------------------------------------------------------------------
 
-    def test_all_iteration_methods_work_on_any_sequence_not_just_lists(self):
-        # Ranges are an iterable sequence
-        result = map(self.add_ten, range(1,4))
-        self.assertEqual(__, list(result))
-
+    def test_interations_can_be_converted_to_lists(self):
         try:
             file = open("example_file.txt")
 
