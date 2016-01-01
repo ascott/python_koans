@@ -44,7 +44,7 @@ class AboutClassAttributes(Koan):
 
         self.assertEqual(__, fido.wag())
 
-    def test_other_objects_are_not_affected_by_these_singleton_functions(self):
+    def test_other_objects_are_not_affected_by_functions_added_to_an_instance(self):
         fido = self.Dog()
         rover = self.Dog()
 
@@ -74,7 +74,7 @@ class AboutClassAttributes(Koan):
         def growl(cls):
             return "classmethod growl, arg: cls=" + cls.__name__
 
-    def test_since_classes_are_objects_you_can_define_singleton_methods_on_them_too(self):
+    def test_since_classes_are_objects_you_can_define_methods_on_them_too(self):
         self.assertRegexpMatches(self.Dog2.growl(), __)
 
     def test_classmethods_are_not_independent_of_instance_methods(self):
