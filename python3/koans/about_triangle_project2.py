@@ -10,12 +10,15 @@ class AboutTriangleProject2(Koan):
     # The first assignment did not talk about how to handle errors.
     # Let's handle that part now.
     def test_illegal_triangles_throw_exceptions(self):
+        # Hint: all sides must be greater than 0
         with self.assertRaises(TriangleError):
             triangle2(0, 0, 0)
 
         with self.assertRaises(TriangleError):
             triangle2(3, 4, -5)
 
+        # Hint: the sum of the two smallest sides should be greater than the
+        # remaining side
         with self.assertRaises(TriangleError):
             triangle2(1, 1, 3)
 

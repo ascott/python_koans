@@ -71,6 +71,8 @@ class AboutControlStatements(Koan):
         for knight, answer in round_table:
             result.append("Contestant: '" + knight + "'   Answer: '" + answer + "'")
 
+        # Hint: this one is a little tricky. Based on the code above whatu
+        # will appear in result[2], but not in result[0], result[1] or result[3]?
         text = __
 
         self.assertRegexpMatches(result[2], text)
