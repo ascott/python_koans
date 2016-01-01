@@ -43,6 +43,7 @@ class AboutTuples(Koan):
         self.assertEqual(__, tuple("Surprise!"))
 
     def test_creating_empty_tuples(self):
+        # Hint: answer using the literal syntax!
         self.assertEqual(__ , ())
         self.assertEqual(__ , tuple()) #Sometimes less confusing
 
