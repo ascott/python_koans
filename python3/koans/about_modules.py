@@ -59,7 +59,7 @@ class AboutModules(Koan):
         # NOTE Using this module level import declared at the top of this script:
         #   from .local_module_with_all_defined import *
 
-        # 'Goat' is on the __ALL__ list
+        # 'Goat' is on the __all__ list
         goat = Goat()
         self.assertEqual(__, goat.name)
 
