@@ -3,7 +3,7 @@
 
 # Triangle Project Code.
 
-# Triangle analyzes the lengths of the sides of a triangle
+# triangle() analyzes the lengths of the sides of a triangle
 # (represented by a, b and c) and returns the type of triangle.
 #
 # It returns:
@@ -13,11 +13,17 @@
 #
 # The tests for this method can be found in
 #   about_triangle_project.py
-# and
-#   about_triangle_project_2.py
-#
 def triangle(a, b, c):
-    # DELETE 'PASS' AND WRITE THIS CODE
+    # DELETE 'pass' AND WRITE THIS CODE
+    pass
+
+# triangle2() contains the same logic as triangle() expect that it also adds
+# some error handling for bad inputs.
+#
+# The tests for this method can be found in
+#   about_triangle_project_2.py
+def triangle2(a, b, c):
+    # DELETE 'pass' AND WRITE THIS CODE
     pass
 
 # Error class used in part 2.  No need to change this code.
