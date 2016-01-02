@@ -7,6 +7,7 @@
 
 from runner.koan import *
 
+
 class AboutAttributeAccess(Koan):
 
     class TypicalObject:
