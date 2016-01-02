@@ -20,6 +20,28 @@ _____ = 0
 
 
 class Koan(unittest.TestCase):
+
+    def _baseAssertEqual(self, first, second, msg=None):
+        """Override the exception message when the koan hasn't be attempted.
+
+        Instead of showing a message like:
+            "-=> FILL ME IN! <=-" != 4
+        Show:
+            Please attempt this koan to get more help
+
+        This will force the student to attempt the exercise before giving
+        them the answer.
+        """
+        old_longMessage = self.longMessage
+        if first in (__, ____) or second in (__, ____):
+            msg = 'Please attempt this koan to get more help'
+            try:
+                self.longMessage = False
+                return super()._baseAssertEqual(first, second, msg)
+            finally:
+                self.longMessage = old_longMessage
+        return super()._baseAssertEqual(first, second, msg)
+
     def assertNoRegexpMatches(self, text, expected_regex, msg=None):
         """
         Throw an exception if the regular expresson pattern is not matched
